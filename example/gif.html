@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>loading</title>
+  <style>
+
+    .loader {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 1 auto;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 25%;
+      max-width: 25%;
+      height: 200px;
+      width: 250px;
+      align-items: center;
+      justify-content: center;
+      background: #59488b;
+    }
+
+    .ball-zig-zag {
+      position: relative;
+      -webkit-transform: translate(-15px, -15px);
+      -ms-transform: translate(-15px, -15px);
+      transform: translate(-15px, -15px);
+    }
+
+    .ball-zig-zag > div {
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      margin: 2px;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      position: absolute;
+      margin-left: 15px;
+      top: 30px;
+      left: 30px;
+    }
+
+    .ball-zig-zag > div:first-child {
+      background-color: #1bd;
+      -webkit-animation: ball-zig 0.7s 0s infinite linear;
+      animation: ball-zig 0.7s 0s infinite linear;
+    }
+
+    .ball-zig-zag > div:last-child {
+      background-color: #ddd;
+      -webkit-animation: ball-zag 0.7s 0s infinite linear;
+      animation: ball-zag 0.7s 0s infinite linear;
+    }
+
+    @-webkit-keyframes ball-zig {
+      33% {
+        -webkit-transform: translate(-15px, -30px);
+        transform: translate(-15px, -30px);
+      }
+
+      66% {
+        -webkit-transform: translate(15px, -30px);
+        transform: translate(15px, -30px);
+      }
+
+      100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes ball-zig {
+      33% {
+        -webkit-transform: translate(-15px, -30px);
+        transform: translate(-15px, -30px);
+      }
+
+      66% {
+        -webkit-transform: translate(15px, -30px);
+        transform: translate(15px, -30px);
+      }
+
+      100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+
+    @-webkit-keyframes ball-zag {
+      33% {
+        -webkit-transform: translate(15px, 30px);
+        transform: translate(15px, 30px);
+      }
+
+      66% {
+        -webkit-transform: translate(-15px, 30px);
+        transform: translate(-15px, 30px);
+      }
+
+      100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes ball-zag {
+      33% {
+        -webkit-transform: translate(15px, 30px);
+        transform: translate(15px, 30px);
+      }
+
+      66% {
+        -webkit-transform: translate(-15px, 30px);
+        transform: translate(-15px, 30px);
+      }
+
+      100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+<br/>
+<div class="loader">
+  <div class="loader-inner ball-zig-zag">
+    <div></div>
+    <div></div>
+  </div>
+</div>
+</body>
+</html>
